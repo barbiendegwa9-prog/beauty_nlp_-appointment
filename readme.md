@@ -1,557 +1,318 @@
-# Catering Brand NLP Chatbot
+# Beauty Shop NLP Chatbot
 
-## Project Description
+## Project Overview
 
-The **Catering Brand NLP Chatbot** is a simple Python-based chatbot designed to help customers interact with a catering business.
+The **Beauty Shop NLP Chatbot** is a Python-based chatbot application built with **Streamlit** and **TextBlob**.
 
-The chatbot can answer questions about:
+The chatbot helps customers get information about beauty products, prices, opening hours, recommendations, and appointments. Customers can also book appointments through the application, and the appointment details are saved in a CSV file for future reference.
 
-* Catering services
-* Food and menus
-* Cakes and baking
-* Events
-* Prices
-* Delivery
-* Booking appointments
+## Features
 
-The chatbot also uses **Natural Language Processing (NLP)** to detect the customer's intention and **sentiment analysis** to identify whether the customer's message is positive, negative, or neutral.
-
-Customers can also make catering appointments. The appointment information is saved in a CSV file so that it can be viewed later.
-
----
-
-## Project Objectives
-
-The main objectives of this project are to:
-
-1. Build a simple NLP chatbot using Python.
-2. Detect customer intentions from messages.
-3. Perform sentiment analysis using TextBlob.
-4. Provide automatic responses to customers.
-5. Allow customers to book catering appointments.
-6. Save appointment information for future reference.
-7. Allow saved appointments to be viewed from the chatbot.
-
----
+* Customer greeting and conversation
+* Natural Language Processing using TextBlob
+* Sentiment analysis
+* Intent detection
+* Skincare product information
+* Makeup product information
+* Hair product information
+* Product prices
+* Opening hours
+* Product recommendations
+* Appointment booking
+* Appointment information storage
+* View saved appointments
+* CSV file storage
+* Streamlit web interface
 
 ## Technologies Used
 
-| Technology | Purpose                                   |
-| ---------- | ----------------------------------------- |
-| Python     | Programming language                      |
-| TextBlob   | Sentiment analysis                        |
-| CSV        | Store appointment information             |
-| OS         | Check whether the appointment file exists |
-| JupyterLab | Development environment                   |
+* Python
+* Streamlit
+* TextBlob
+* Pandas
+* CSV
+* JupyterLab
+* GitHub
 
----
+## Project Structure
 
-## Python Libraries
-
-The project uses the following libraries:
-
-```python
-from textblob import TextBlob
-import csv
-import os
+```text
+Beauty-Shop-NLP-Chatbot/
+│
+├── app.py
+├── beauty_appointments.csv
+├── requirements.txt
+└── README.md
 ```
 
-### TextBlob
+## How the Chatbot Works
 
-TextBlob is used to analyze the sentiment of customer messages.
+The chatbot follows these main steps:
+
+```text
+Customer Message
+       |
+       v
+Text Processing
+       |
+       v
+Intent Detection
+       |
+       v
+Sentiment Analysis
+       |
+       v
+Response Generation
+       |
+       v
+Bot Response
+```
+
+## Chatbot Intents
+
+The chatbot can recognize different types of customer requests.
+
+| Intent         | Example                       |
+| -------------- | ----------------------------- |
+| Greeting       | Hello                         |
+| Appointment    | I want to book an appointment |
+| Skincare       | Show me skincare products     |
+| Makeup         | What makeup do you have?      |
+| Hair           | Do you have hair products?    |
+| Price          | How much is the foundation?   |
+| Time           | What time do you open?        |
+| Recommendation | What do you recommend?        |
+| Help           | Can you help me?              |
+| Goodbye        | Bye                           |
+
+## Products and Prices
+
+### Skincare
+
+| Product         |     Price |
+| --------------- | --------: |
+| Face Wash       |   KSh 800 |
+| Facial Cleanser | KSh 1,000 |
+| Moisturizer     | KSh 1,200 |
+| Face Serum      | KSh 1,500 |
+| Sunscreen       | KSh 1,300 |
+| Face Mask       |   KSh 700 |
+| Body Lotion     | KSh 1,000 |
+
+### Makeup
+
+| Product           |     Price |
+| ----------------- | --------: |
+| Lipstick          |   KSh 700 |
+| Lip Gloss         |   KSh 600 |
+| Foundation        | KSh 1,800 |
+| Concealer         | KSh 1,200 |
+| Mascara           |   KSh 900 |
+| Eyeliner          |   KSh 600 |
+| Blush             | KSh 1,000 |
+| Eyeshadow Palette | KSh 2,000 |
+
+### Hair Products
+
+| Product        |     Price |
+| -------------- | --------: |
+| Shampoo        |   KSh 900 |
+| Conditioner    |   KSh 900 |
+| Hair Oil       |   KSh 700 |
+| Hair Treatment | KSh 1,500 |
+| Hair Gel       |   KSh 600 |
+| Edge Control   |   KSh 700 |
+| Wig            | KSh 5,000 |
+
+## Appointment Booking
+
+Customers can book an appointment by providing:
+
+* Customer name
+* Phone number
+* Service
+* Appointment date
+* Appointment time
+
+Available appointment times:
+
+```text
+9:00 AM
+11:00 AM
+1:00 PM
+3:00 PM
+5:00 PM
+```
+
+Available services include:
+
+```text
+Manicure
+Pedicure
+Facial
+Makeup
+Hair Styling
+Braiding
+Bridal Makeup
+Eyelashes
+```
+
+## Appointment Storage
+
+Appointment information is saved in:
+
+```text
+beauty_appointments.csv
+```
+
+The CSV file stores:
+
+```text
+Customer Name
+Phone
+Service
+Date
+Time
+```
+
+This allows the application to keep appointment records for future reference.
+
+## Sentiment Analysis
+
+The chatbot uses **TextBlob** to analyze the sentiment of customer messages.
+
+It classifies messages as:
+
+```text
+Positive
+Negative
+Neutral
+```
 
 For example:
 
 ```text
-Customer: I love your catering service
+"I love your makeup products."
 ```
 
-The chatbot can identify this as:
+can be classified as:
 
 ```text
 Positive
 ```
 
----
+## Installation
 
-## Main Features
+### 1. Clone the Repository
 
-### 1. Greeting
+```bash
+git clone YOUR_GITHUB_REPOSITORY_URL
+```
 
-The chatbot recognizes greetings such as:
+### 2. Open the Project Folder
+
+```bash
+cd Beauty-Shop-NLP-Chatbot
+```
+
+### 3. Install the Required Libraries
+
+```bash
+pip install -r requirements.txt
+```
+
+If you do not have a `requirements.txt` file, install the libraries manually:
+
+```bash
+pip install streamlit textblob pandas
+```
+
+### 4. Run the Application
+
+Make sure your main Python file is named:
 
 ```text
-hello
-hi
-hey
+app.py
 ```
 
-Example:
+Then run:
+
+```bash
+streamlit run app.py
+```
+
+Streamlit will provide a local web address where you can open the chatbot.
+
+## Running From JupyterLab
+
+If you are using JupyterLab, open the **Terminal** inside JupyterLab.
+
+Navigate to your project folder:
+
+```bash
+cd path/to/Beauty-Shop-NLP-Chatbot
+```
+
+Then run:
+
+```bash
+streamlit run app.py
+```
+
+## Deployment
+
+The application can be deployed online using a Streamlit-compatible hosting service.
+
+Before deployment, make sure your GitHub repository contains:
 
 ```text
-Customer: Hello
-
-Bot: Hello! Welcome to our catering brand. How can we help you today?
+app.py
+requirements.txt
+README.md
 ```
 
----
-
-### 2. Menu Information
-
-Customers can ask about food or menus.
-
-Example:
+The `requirements.txt` file should contain:
 
 ```text
-Customer: What food do you offer?
-
-Bot: We offer meals, snacks, desserts, refreshments and other catering options.
+streamlit
+textblob
+pandas
 ```
 
----
-
-### 3. Baking and Cakes
-
-The chatbot recognizes questions about:
-
-* Cakes
-* Baking
-* Pastries
-
-Example:
-
-```text
-Customer: Do you make cakes?
-
-Bot: We offer cakes, pastries and other baked products for different occasions.
-```
-
----
-
-### 4. Catering Services
-
-Customers can ask about catering services.
-
-Example:
-
-```text
-Customer: Do you provide catering services?
-
-Bot: We provide catering services for weddings, birthdays, parties, meetings and other events.
-```
-
----
-
-### 5. Events
-
-The chatbot can identify events such as:
-
-* Weddings
-* Birthdays
-* Parties
-* Corporate events
-
-Example:
-
-```text
-Customer: Do you cater for weddings?
-
-Bot: We cater for weddings, birthdays, parties, corporate events and other special occasions.
-```
-
----
-
-### 6. Prices
-
-Customers can ask about prices.
-
-Example:
-
-```text
-Customer: How much does catering cost?
-
-Bot: Our prices depend on the type of service, menu and number of guests.
-```
-
----
-
-### 7. Delivery
-
-Customers can ask about delivery.
-
-Example:
-
-```text
-Customer: Do you offer delivery?
-
-Bot: We offer catering delivery depending on the location and order.
-```
-
----
-
-## Appointment Booking
-
-One of the main features of the chatbot is **catering appointment booking**.
-
-When a customer asks to book an appointment, the chatbot collects:
-
-1. Customer name
-2. Phone number
-3. Event type
-4. Event date
-5. Event time
-6. Event location
-7. Number of guests
-8. Catering service/package
-
-Example:
-
-```text
-Customer: I want to make a booking.
-
-Bot: Sure! I can help you make a catering appointment.
-
-Customer name: Mary
-Phone number: 0712345678
-Type of event: Wedding
-Event date: 20/10/2026
-Event time: 2:00 PM
-Event location: Nairobi
-Number of guests: 100
-Catering service/package: Wedding package
-
-Appointment saved successfully!
-Thank you, Mary
-Your catering appointment has been recorded.
-```
-
----
-
-## Saving Appointments
-
-Appointments are saved in a CSV file called:
-
-```text
-catering_appointments.csv
-```
-
-The file contains the following columns:
-
-```text
-Name
-Phone
-Event Type
-Event Date
-Event Time
-Location
-Guests
-Service
-```
-
-This allows the business to keep appointment information for future reference.
-
----
-
-## Viewing Appointments
-
-To view saved appointments, type:
-
-```text
-view appointments
-```
-
-Example:
-
-```text
-Customer: view appointments
-```
-
-The chatbot will display the saved bookings.
-
----
-
-## Intent Detection
-
-The chatbot uses an `detect_intent()` function to identify what the customer wants.
-
-The main intents are:
-
-| Intent   | Example Keywords           |
-| -------- | -------------------------- |
-| Greeting | hello, hi, hey             |
-| Menu     | menu, food, meal           |
-| Baking   | cake, baking, pastry       |
-| Catering | catering, cater            |
-| Events   | event, wedding, party      |
-| Price    | price, cost, charge        |
-| Booking  | book, booking, appointment |
-| Delivery | delivery, deliver          |
-| Help     | help, assist               |
-| Goodbye  | bye, exit, quit            |
-
-If the chatbot does not recognize the customer's message, it returns:
-
-```text
-unknown
-```
-
----
-
-## Sentiment Analysis
-
-The project uses TextBlob to analyze customer sentiment.
-
-There are three possible results:
-
-### Positive
-
-```text
-I love your food.
-```
-
-Result:
-
-```text
-positive
-```
-
-### Negative
-
-```text
-Your service is bad.
-```
-
-Result:
-
-```text
-negative
-```
-
-### Neutral
-
-```text
-I need information about catering.
-```
-
-Result:
-
-```text
-neutral
-```
-
-The sentiment is determined using the polarity score from TextBlob.
-
----
-
-## Chatbot Workflow
-
-The chatbot follows this process:
-
-```text
-Customer Message
-       ↓
-Text Processing
-       ↓
-Intent Detection
-       ↓
-Sentiment Analysis
-       ↓
-Response Selection
-       ↓
-Bot Response
-       ↓
-If Booking → Collect Customer Details
-       ↓
-Save Appointment to CSV
-```
-
----
-
-## How to Run the Project
-
-### Step 1: Install Python
-
-Make sure Python is installed on your computer.
-
-You can also use **Anaconda/JupyterLab**.
-
----
-
-### Step 2: Open JupyterLab
-
-Open Anaconda Navigator and start:
-
-```text
-JupyterLab
-```
-
----
-
-### Step 3: Create a Notebook
-
-Create a new Python notebook.
-
-For example:
-
-```text
-Catering_Brand_NLP_Chatbot.ipynb
-```
-
----
-
-### Step 4: Install TextBlob
-
-If TextBlob is not installed, run:
-
-```python
-!pip install textblob
-```
-
----
-
-### Step 5: Import Libraries
-
-Run:
-
-```python
-from textblob import TextBlob
-import csv
-import os
-```
-
----
-
-### Step 6: Add the Chatbot Code
-
-Copy the chatbot Python code into your notebook and run the cells.
-
----
-
-### Step 7: Start the Chatbot
-
-Run the final cell.
-
-You should see:
-
-```text
-==========================================
-       CATERING BRAND CHATBOT
-==========================================
-Welcome to our catering service!
-Type 'bye' to end the conversation.
-Type 'view appointments' to see saved bookings.
-```
-
-The chatbot is now ready to receive customer messages.
-
----
-
-## Example Conversation
-
-```text
-Customer: Hello
-
-Bot: Hello! Welcome to our catering brand. How can we help you today?
-
-Customer: What food do you offer?
-
-Bot: We offer meals, snacks, desserts, refreshments and other catering options.
-
-Customer: Do you make cakes?
-
-Bot: We offer cakes, pastries and other baked products for different occasions.
-
-Customer: I want to book
-
-Bot: Sure! I can help you make a catering appointment.
-
---- CATERING APPOINTMENT ---
-
-Customer name: Jane
-Phone number: 0712345678
-Type of event: Birthday
-Event date: 25/10/2026
-Event time: 1:00 PM
-Event location: Nairobi
-Number of guests: 50
-Catering service/package: Birthday package
-
-Appointment saved successfully!
-Thank you, Jane
-Your catering appointment has been recorded.
-
-Customer: bye
-
-Bot: Goodbye! Thank you for choosing our catering brand.
-```
-
----
-
-## Project Files
-
-A possible project folder structure is:
-
-```text
-Catering_NLP_Chatbot/
-│
-├── Catering_Brand_NLP_Chatbot.ipynb
-├── README.md
-└── catering_appointments.csv
-```
-
-The `catering_appointments.csv` file will be created automatically after the first appointment is saved.
-
----
-
-## Important Note
-
-This chatbot is a **rule-based NLP chatbot**.
-
-It does not train a machine-learning model or learn automatically from customer conversations.
-
-Instead, Python rules and keywords are used to identify customer intentions and select responses.
-
-The project demonstrates basic concepts of:
-
-* Python programming
-* Natural Language Processing (NLP)
-* Sentiment Analysis
-* Intent Detection
-* File Handling
-* CSV Data Storage
-* Chatbot Development
-
----
+After deploying, the chatbot can be accessed through a web browser.
 
 ## Future Improvements
 
-The chatbot could be improved by adding:
+The project can be improved by adding:
 
-* A larger menu with food prices
-* Catering packages and prices
-* Automatic appointment confirmation
+* Online database storage
+* Customer login
+* Admin dashboard
 * Appointment cancellation
 * Appointment editing
-* Date and time validation
-* Customer order history
-* A database such as SQLite or MySQL
-* A web interface
+* Automatic appointment reminders
+* More beauty products
+* Better NLP intent detection
+* Online payment integration
+* Customer history
 * WhatsApp integration
-* Online deployment
-* A machine-learning-based intent classifier
 
----
+## Learning Objectives
 
-## Conclusion
+This project demonstrates how to:
 
-The Catering Brand NLP Chatbot is a beginner-friendly AI/NLP project that demonstrates how Python can be used to create a customer service chatbot.
+* Build a simple NLP chatbot
+* Use TextBlob for sentiment analysis
+* Detect user intents
+* Create a Streamlit web application
+* Collect information from users
+* Save data using CSV files
+* Display stored data using Pandas
+* Run a Python application online
+* Prepare a project for GitHub and deployment
 
-It combines **intent detection, sentiment analysis, automatic responses, and appointment storage** to provide a simple catering business solution.
+## Author
 
-### Author
+**Beauty Shop NLP Chatbot Project**
 
-**Catering Brand NLP Chatbot Project**
-
-### Project Type
-
-**Python + NLP + Chatbot + Appointment Booking**
+Built using Python, Streamlit, TextBlob, and Pandas.
